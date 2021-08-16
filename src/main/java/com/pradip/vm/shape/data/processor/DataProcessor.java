@@ -48,20 +48,16 @@ public class DataProcessor {
 			
 			Model model = shape.get();
 			
-			
-			String shapeTask = shape.get().toString();
-			
 			try {
-				Shape shpObj = ShapeParserUtil.findShape(model);
+				Shape shapeObject = ShapeParserUtil.findShape(model);
 				
-				return "{\""+type+"\" : "+String.format("%.2f", shpObj.area())+"}";
+				return "{\""+type+"\" : "+String.format("%.2f", shapeObject.area())+"}";
 			} catch (JsonMappingException e) {
 				e.printStackTrace();
 			} catch (JsonProcessingException e) {
 				e.printStackTrace();
 			}
 			
-			return shapeTask;
 		}
 		
 		return "No Data found for this task..";

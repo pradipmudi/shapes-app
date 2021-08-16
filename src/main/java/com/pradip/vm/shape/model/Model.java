@@ -5,6 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Model {
+	
 	@Id
 	long taskId;
 	String jsonData;
@@ -21,6 +22,10 @@ public class Model {
 	}
 	public void setJsonData(String jsonData) {
 		this.jsonData = jsonData;
+	}
+	@Override
+	public String toString() {
+		return "Model [taskId=" + taskId + ", jsonData=" + jsonData + "]";
 	}
 	
 	
